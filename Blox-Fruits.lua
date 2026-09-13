@@ -8330,7 +8330,7 @@ if game.PlaceId ~= 2753915549 then
 							end
 						end)
 						v708 = v654:MakeTab({ "Farming", "home" })
-						local v709 = v654:MakeTab({ "Auto Fishing", "rbxassetid://" })
+						local v709 = v654:MakeTab({ "Auto Fishing", "rbxassetid://127664059821666" })
 						local v710 = v654:MakeTab({ "Quest | Items", "swords" })
 						local v711 = v654:MakeTab({ "Volcano Dojo", "cake" })
 						local v712 = v654:MakeTab({ "Sea Event", "waves" })
