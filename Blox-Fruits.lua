@@ -288,183 +288,183 @@ local TabSettings = Window:MakeTab({ "Settings", "settings" })
 TabFarm:AddParagraph({ Title = "World", Content = World1 and "Sea 1" or World2 and "Sea 2" or World3 and "Sea 3" or tostring(game.PlaceId) })
 TabFarm:AddDropdown({
 	Name = "Select Weapon",
-	Description = "Chọn vũ khí để farm",
+	Description = "Chọn vũ khí",
 	Options = {"Melee","Sword","Gun","Blox Fruit"},
 	Default = _G.SelectWeapon,
 	Callback = function(v) _G.SelectWeapon = v end,
 })
-TabFarm:AddToggle(T("Auto Farm Level", "AutoFarm", false, "Tự động farm level theo quest"))
-TabFarm:AddToggle(T("Farm Level New", "FarmLevelNew", false, "Chế độ farm level mới"))
-TabFarm:AddToggle(T("Auto Kill Near | Mob Aura", "AutoKillNear", false, "Tự động đánh quái ở gần"))
-TabFarm:AddToggle(T("Auto Select Boss", "AutoSelectBoss", false, "Tự động chọn boss"))
-TabFarm:AddToggle(T("Auto Farm Boss", "AutoFarmBoss", false, "Tự động farm boss"))
-TabFarm:AddToggle(T("Farm Pirate", "FarmPirate", false, "Farm khu vực Pirate"))
-TabFarm:AddToggle(T("Farm Boss", "FarmBoss", false, "Farm boss đã chọn"))
-TabFarm:AddButton(B("Update Boss", "Cập nhật danh sách boss", function() _G.UpdateBossList = true end))
-TabFarm:AddParagraph({ Title = "Boss Spawn Status", Content = "Trạng thái boss xuất hiện in-game" })
-TabFarm:AddToggle(T("Check Eyes Status", "CheckEyes", false, "Kiểm tra trạng thái Eyes"))
-TabFarm:AddToggle(T("Auto Farm Tyrant", "AutoFarmTyrant", false, "Tự động farm Tyrant"))
-TabFarm:AddButton(B("Summon Tyrant Of The Skies", "Triệu hồi Tyrant Of The Skies", function() _G.SummonTyrant = true end))
-TabFarm:AddToggle(T("Check Bone", "CheckBone", false, "Kiểm tra số Bone"))
-TabFarm:AddToggle(T("Farm Bone", "FarmBone", false, "Tự động farm Bone"))
-TabFarm:AddToggle(T("Separator Hallow Scythe", "HallowScythe", false, "Xử lý Hallow Scythe"))
+TabFarm:AddToggle(T("Auto Farm Level", "AutoFarm", false, "Tự động farm level"))
+TabFarm:AddToggle(T("Farm Level New", "FarmLevelNew", false, "Farm level mới"))
+TabFarm:AddToggle(T("Auto Kill Near | Mob Aura", "AutoKillNear", false, "Đánh quái gần"))
+TabFarm:AddToggle(T("Auto Select Boss", "AutoSelectBoss", false, "Chọn boss"))
+TabFarm:AddToggle(T("Auto Farm Boss", "AutoFarmBoss", false, "Farm boss"))
+TabFarm:AddToggle(T("Farm Pirate", "FarmPirate", false, "Farm Pirate"))
+TabFarm:AddToggle(T("Farm Boss", "FarmBoss", false, "Farm boss"))
+TabFarm:AddButton(B("Update Boss", "Cập nhật boss", function() _G.UpdateBossList = true end))
+TabFarm:AddParagraph({ Title = "Boss Spawn Status", Content = "Trạng thái boss" })
+TabFarm:AddToggle(T("Check Eyes Status", "CheckEyes", false, "Kiểm tra Eyes"))
+TabFarm:AddToggle(T("Auto Farm Tyrant", "AutoFarmTyrant", false, "Farm Tyrant"))
+TabFarm:AddButton(B("Summon Tyrant Of The Skies", "Triệu hồi Tyrant", function() _G.SummonTyrant = true end))
+TabFarm:AddToggle(T("Check Bone", "CheckBone", false, "Kiểm tra Bone"))
+TabFarm:AddToggle(T("Farm Bone", "FarmBone", false, "Farm Bone"))
+TabFarm:AddToggle(T("Separator Hallow Scythe", "HallowScythe", false, "Hallow Scythe"))
 TabFarm:AddToggle(T("Trade Bone", "TradeBone", false, "Đổi Bone"))
 TabFarm:AddToggle(T("Auto Pray", "AutoPray", false, "Tự động Pray"))
 TabFarm:AddToggle(T("Auto Try Luck", "AutoTryLuck", false, "Tự động Try Luck"))
 TabFarm:AddToggle(T("Check Cake Prince", "CheckCakePrince", false, "Kiểm tra Cake Prince"))
-TabFarm:AddToggle(T("Farm Katakuri", "FarmKatakuri", false, "Farm Katakuri / Cake Prince"))
-TabFarm:AddToggle(T("Farm Katakuri V2", "FarmKatakuriV2", false, "Farm Katakuri phiên bản 2"))
-TabFarm:AddToggle(T("Auto Collect Berry", "AutoCollectBerry", false, "Tự động nhặt Berry"))
-TabFarm:AddToggle(T("Auto Farm Chest [ Tween ]", "AutoFarmChest", false, "Tự động farm rương (tween)"))
+TabFarm:AddToggle(T("Farm Katakuri", "FarmKatakuri", false, "Farm Katakuri"))
+TabFarm:AddToggle(T("Farm Katakuri V2", "FarmKatakuriV2", false, "Farm Katakuri V2"))
+TabFarm:AddToggle(T("Auto Collect Berry", "AutoCollectBerry", false, "Nhặt Berry"))
+TabFarm:AddToggle(T("Auto Farm Chest [ Tween ]", "AutoFarmChest", false, "Farm rương"))
 TabFarm:AddDropdown({
 	Name = "Select Material",
-	Description = "Chọn vật liệu để farm",
+	Description = "Chọn material",
 	Options = {"Angel Wings","Mystic Droplet","Vampire Fang","Gunpowder","Conjured Cocoa","Mini Tusk","Fish Tail","Magma Ore","Leather + Scrap Metal","Radiactive Material"},
 	Default = _G.SelectMaterial,
 	Callback = function(v) _G.SelectMaterial = v MaterialMon() end,
 })
 TabFarm:AddToggle({
 	Name = "Start Farm",
-	Description = "Bật farm material đã chọn",
+	Description = "Bắt đầu farm",
 	Default = false,
 	Callback = function(v) _G.StartMaterialFarm = v if v then MaterialMon() end end,
 })
-TabFarm:AddToggle(T("Bring Mod", "BringMonster", true, "Tự động gom quái về gần bạn"))
+TabFarm:AddToggle(T("Bring Mod", "BringMonster", true, "Gom quái"))
 
-TabFish:AddToggle(T("Auto Fishing", "AutoFishing", false, "Tự động câu cá"))
+TabFish:AddToggle(T("Auto Fishing", "AutoFishing", false, "Tự động câu"))
 TabFish:AddDropdown({
 	Name = "Select Fishing Lure",
-	Description = "Chọn mồi câu",
+	Description = "Chọn mồi",
 	Options = {"Default","Lure1","Lure2","Lure3"},
 	Default = "Default",
 	Callback = function(v) _G.SelectLure = v pcall(function() Invoke("SelectBait", v) end) end,
 })
 TabFish:AddDropdown({
 	Name = "Select Fishing Rod",
-	Description = "Chọn cần câu",
+	Description = "Chọn cần",
 	Options = {"Default","Rod1","Rod2","Rod3"},
 	Default = "Default",
 	Callback = function(v) _G.SelectRod = v end,
 })
 
 local questItems = {
-	{"AutoSecondSea","AutoSecondSea","Tự động mở Sea 2"},
-	{"Auto Quest Sea 3","AutoThirdSea","Tự động quest Sea 3"},
-	{"Auto Quest Sea Bartilo","AutoBartilo","Tự động quest Bartilo"},
-	{"Kill Greybeard","KillGreybeard","Tiêu diệt Greybeard"},
-	{"Auto Get Saber","AutoGetSaber","Tự động nhận Saber"},
-	{"Auto Get Sword Pole","AutoGetPole","Tự động nhận Pole"},
-	{"Auto Get Sword Saw","AutoGetSaw","Tự động nhận Saw"},
-	{"Auto Get Sword Wardens","AutoGetWardens","Tự động nhận Wardens"},
-	{"Auto Get Sword Trident","AutoGetTrident","Tự động nhận Trident"},
-	{"Auto Factory","AutoFactory","Tự động Factory"},
-	{"Auto Kill Dark Beard","KillDarkbeard","Tiêu diệt Dark Beard"},
-	{"Auto Kill Cursed Captain","KillCursedCaptain","Tiêu diệt Cursed Captain"},
-	{"Auto Buy Haki Colors","AutoBuyHakiColors","Tự động mua màu Haki"},
-	{"Auto Buy Legendary Sword","AutoBuyLegendarySword","Tự động mua Legendary Sword"},
-	{"Auto Get Longsword","AutoGetLongsword","Tự động nhận Longsword"},
-	{"Auto Get Sword Gravity Blade","AutoGetGravityBlade","Tự động nhận Gravity Blade"},
-	{"Auto Get Sword Flail","AutoGetFlail","Tự động nhận Flail"},
-	{"Auto Get Sword Rengoku","AutoGetRengoku","Tự động nhận Rengoku"},
-	{"Auto Get Sword Dragon Trident","AutoGetDragonTrident","Tự động nhận Dragon Trident"},
-	{"Auto Kill Rip Indra","KillRipIndra","Tiêu diệt Rip Indra"},
-	{"Auto Haki Colors","AutoHakiColors","Tự động Haki Colors"},
-	{"Auto Skull Guitar","AutoSkullGuitar","Tự động Skull Guitar"},
-	{"Kill Elite Hunter","KillEliteHunter","Tiêu diệt Elite Hunter"},
-	{"Auto Cdk [Beta]","AutoCDK","Tự động CDK (Beta)"},
-	{"Auto Get Yama","AutoGetYama","Tự động nhận Yama"},
-	{"Auto Holy Torch Tushita","AutoHolyTorch","Tự động Holy Torch Tushita"},
-	{"Auto Get Tushita","AutoGetTushita","Tự động nhận Tushita"},
-	{"Auto Get Sword Twin Hooks","AutoGetTwinHooks","Tự động nhận Twin Hooks"},
-	{"Auto Get Sword Canvander","AutoGetCanvander","Tự động nhận Canvander"},
-	{"Auto Get Sword Buddy","AutoGetBuddy","Tự động nhận Buddy Sword"},
+	{"AutoSecondSea","AutoSecondSea","Mở Sea 2"},
+	{"Auto Quest Sea 3","AutoThirdSea","Quest Sea 3"},
+	{"Auto Quest Sea Bartilo","AutoBartilo","Quest Bartilo"},
+	{"Kill Greybeard","KillGreybeard","Giết Greybeard"},
+	{"Auto Get Saber","AutoGetSaber","Nhận Saber"},
+	{"Auto Get Sword Pole","AutoGetPole","Nhận Pole"},
+	{"Auto Get Sword Saw","AutoGetSaw","Nhận Saw"},
+	{"Auto Get Sword Wardens","AutoGetWardens","Nhận Wardens"},
+	{"Auto Get Sword Trident","AutoGetTrident","Nhận Trident"},
+	{"Auto Factory","AutoFactory","Auto Factory"},
+	{"Auto Kill Dark Beard","KillDarkbeard","Giết Dark Beard"},
+	{"Auto Kill Cursed Captain","KillCursedCaptain","Giết Cursed Captain"},
+	{"Auto Buy Haki Colors","AutoBuyHakiColors","Mua màu Haki"},
+	{"Auto Buy Legendary Sword","AutoBuyLegendarySword","Mua Legendary Sword"},
+	{"Auto Get Longsword","AutoGetLongsword","Nhận Longsword"},
+	{"Auto Get Sword Gravity Blade","AutoGetGravityBlade","Nhận Gravity Blade"},
+	{"Auto Get Sword Flail","AutoGetFlail","Nhận Flail"},
+	{"Auto Get Sword Rengoku","AutoGetRengoku","Nhận Rengoku"},
+	{"Auto Get Sword Dragon Trident","AutoGetDragonTrident","Nhận Dragon Trident"},
+	{"Auto Kill Rip Indra","KillRipIndra","Giết Rip Indra"},
+	{"Auto Haki Colors","AutoHakiColors","Haki Colors"},
+	{"Auto Skull Guitar","AutoSkullGuitar","Skull Guitar"},
+	{"Kill Elite Hunter","KillEliteHunter","Giết Elite Hunter"},
+	{"Auto Cdk [Beta]","AutoCDK","Auto CDK"},
+	{"Auto Get Yama","AutoGetYama","Nhận Yama"},
+	{"Auto Holy Torch Tushita","AutoHolyTorch","Holy Torch"},
+	{"Auto Get Tushita","AutoGetTushita","Nhận Tushita"},
+	{"Auto Get Sword Twin Hooks","AutoGetTwinHooks","Nhận Twin Hooks"},
+	{"Auto Get Sword Canvander","AutoGetCanvander","Nhận Canvander"},
+	{"Auto Get Sword Buddy","AutoGetBuddy","Nhận Buddy"},
 }
 for _, x in ipairs(questItems) do
 	TabQuest:AddToggle(T(x[1], x[2], false, x[3]))
 end
 TabQuest:AddButton(B("soulGuitarBuy", "Mua Skull Guitar", function() pcall(function() Invoke("soulGuitarBuy") end) end))
-TabQuest:AddButton(B("CDK Quest Progress", "Tiến trình quest CDK", function() pcall(function() Invoke("CDKQuest") end) end))
-TabQuest:AddButton(B("Elite Hunter", "Nhận / tiến trình Elite Hunter", function() pcall(function() Invoke("EliteHunter") end) end))
-TabQuest:AddButton(B("Bartilo Quest Progress", "Tiến trình quest Bartilo", function() pcall(function() Invoke("BartiloQuestProgress") end) end))
-TabQuest:AddButton(B("Abandon Quest", "Hủy quest hiện tại", function() pcall(function() Invoke("AbandonQuest") end) end))
+TabQuest:AddButton(B("CDK Quest Progress", "Quest CDK", function() pcall(function() Invoke("CDKQuest") end) end))
+TabQuest:AddButton(B("Elite Hunter", "Elite Hunter", function() pcall(function() Invoke("EliteHunter") end) end))
+TabQuest:AddButton(B("Bartilo Quest Progress", "Quest Bartilo", function() pcall(function() Invoke("BartiloQuestProgress") end) end))
+TabQuest:AddButton(B("Abandon Quest", "Hủy quest", function() pcall(function() Invoke("AbandonQuest") end) end))
 
-TabDojo:AddButton(B("Tween Dragon Dojo", "Dịch chuyển tới Dragon Dojo", function() _G.TweenDragonDojo = true end))
-TabDojo:AddToggle(T("Auto Dragon Hunter", "AutoDragonHunter", false, "Tự động Dragon Hunter"))
-TabDojo:AddButton(B("Craft Volcanic Magnet", "Chế tạo Volcanic Magnet", function() CraftItem("Volcanic Magnet") end))
+TabDojo:AddButton(B("Tween Dragon Dojo", "Tới Dragon Dojo", function() _G.TweenDragonDojo = true end))
+TabDojo:AddToggle(T("Auto Dragon Hunter", "AutoDragonHunter", false, "Dragon Hunter"))
+TabDojo:AddButton(B("Craft Volcanic Magnet", "Craft Magnet", function() CraftItem("Volcanic Magnet") end))
 
 local seaItems = {
-	{"Check Prehistoric Island","CheckPrehistoric","Kiểm tra Prehistoric Island"},
-	{"Auto Find Prehistoric","FindPrehistoric","Tự động tìm Prehistoric"},
-	{"Auto Tween Prehistoric Island","TweenPrehistoric","Tween tới Prehistoric Island"},
-	{"Auto Defend Prehistoric","DefendPrehistoric","Tự động phòng thủ Prehistoric"},
-	{"Auto Use Melee","AutoUseMelee","Tự động dùng Melee"},
-	{"Auto Use Sword","AutoUseSword","Tự động dùng Sword"},
-	{"Auto Use Gun","AutoUseGun","Tự động dùng Gun"},
-	{"Auto Kill Golem","KillGolem","Tiêu diệt Golem"},
-	{"Auto Kill Aura Golem","KillAuraGolem","Tiêu diệt Aura Golem"},
-	{"Auto Collect Bone","CollectBone","Tự động nhặt Bone"},
-	{"Auto Collect Egg","CollectEgg","Tự động nhặt Egg"},
-	{"Check Kitsune Island","CheckKitsune","Kiểm tra Kitsune Island"},
-	{"Auto Tween Kitsune Island","TweenKitsune","Tween tới Kitsune Island"},
-	{"Esp Kitsune Island","EspKitsune","Hiện ESP Kitsune Island"},
-	{"Auto Azure Ember","AutoAzureEmber","Tự động Azure Ember"},
-	{"Auto Drive Boats","AutoDriveBoats","Tự động lái thuyền"},
-	{"Auto Kill Terror Shark","KillTerrorShark","Tiêu diệt Terror Shark"},
-	{"Auto Kill Shark","KillShark","Tiêu diệt Shark"},
-	{"Auto Kill Piranha","KillPiranha","Tiêu diệt Piranha"},
-	{"Auto Kill Fish Crew Member","KillFishCrew","Tiêu diệt Fish Crew Member"},
-	{"Check Mirage Island","CheckMirage","Kiểm tra Mirage Island"},
-	{"Tween Mirage Island","TweenMirage","Tween tới Mirage Island"},
-	{"Esp Mirage Island","EspMirage","Hiện ESP Mirage Island"},
-	{"Look Moon + Auto V3","LookMoon","Nhìn Moon và bật Race V3"},
-	{"Auto Tween To Gear","TweenGear","Tween tới Gear"},
+	{"Check Prehistoric Island","CheckPrehistoric","Check Prehistoric"},
+	{"Auto Find Prehistoric","FindPrehistoric","Tìm Prehistoric"},
+	{"Auto Tween Prehistoric Island","TweenPrehistoric","Tween Prehistoric"},
+	{"Auto Defend Prehistoric","DefendPrehistoric","Phòng thủ"},
+	{"Auto Use Melee","AutoUseMelee","Dùng Melee"},
+	{"Auto Use Sword","AutoUseSword","Dùng Sword"},
+	{"Auto Use Gun","AutoUseGun","Dùng Gun"},
+	{"Auto Kill Golem","KillGolem","Giết Golem"},
+	{"Auto Kill Aura Golem","KillAuraGolem","Giết Aura Golem"},
+	{"Auto Collect Bone","CollectBone","Nhặt Bone"},
+	{"Auto Collect Egg","CollectEgg","Nhặt Egg"},
+	{"Check Kitsune Island","CheckKitsune","Check Kitsune"},
+	{"Auto Tween Kitsune Island","TweenKitsune","Tween Kitsune"},
+	{"Esp Kitsune Island","EspKitsune","ESP Kitsune"},
+	{"Auto Azure Ember","AutoAzureEmber","Azure Ember"},
+	{"Auto Drive Boats","AutoDriveBoats","Lái thuyền"},
+	{"Auto Kill Terror Shark","KillTerrorShark","Giết Terror Shark"},
+	{"Auto Kill Shark","KillShark","Giết Shark"},
+	{"Auto Kill Piranha","KillPiranha","Giết Piranha"},
+	{"Auto Kill Fish Crew Member","KillFishCrew","Giết Fish Crew"},
+	{"Check Mirage Island","CheckMirage","Check Mirage"},
+	{"Tween Mirage Island","TweenMirage","Tween Mirage"},
+	{"Esp Mirage Island","EspMirage","ESP Mirage"},
+	{"Look Moon + Auto V3","LookMoon","Moon + Race V3"},
+	{"Auto Tween To Gear","TweenGear","Tween Gear"},
 }
 for _, x in ipairs(seaItems) do
 	TabSea:AddToggle(T(x[1], x[2], false, x[3]))
 end
 TabSea:AddButton(B("Buy Boat", "Mua thuyền", function() pcall(function() Invoke("BuyBoat") end) end))
-TabSea:AddButton(B("Gravestone Event", "Sự kiện Gravestone", function() pcall(function() Invoke("gravestoneEvent") end) end))
+TabSea:AddButton(B("Gravestone Event", "Gravestone", function() pcall(function() Invoke("gravestoneEvent") end) end))
 TabSea:AddButton(B("Cake Prince Spawner", "Spawn Cake Prince", function() pcall(function() Invoke("CakePrinceSpawner") end) end))
 
-TabRace:AddButton(B("Teleport To Top Great Tree", "Dịch chuyển lên đỉnh Great Tree", function() topos(CFrame.new(2948,2288,-7215)) end))
-TabRace:AddButton(B("Teleport Temple Of Time", "Dịch chuyển tới Temple Of Time", function() topos(CFrame.new(28286.35546875,14895.3017578125,102.50769424438477)) end))
-TabRace:AddButton(B("Teleport Lever Pull", "Dịch chuyển tới lever", function() _G.TeleportLever = true end))
-TabRace:AddButton(B("Teleport To The Clock", "Dịch chuyển tới đồng hồ", function() _G.TeleportClock = true end))
-TabRace:AddToggle(T("Auto Race Door", "AutoRaceDoor", false, "Tự động mở cửa Race"))
-TabRace:AddButton(B("Buy Ancient One Quest", "Mua quest Ancient One", function() pcall(function() Invoke("ProQuestProgress","AncientOne") end) end))
-TabRace:AddToggle(T("Auto Trial Human Ghost", "AutoTrial", false, "Tự động trial Human / Ghost"))
-TabRace:AddToggle(T("Auto Trial All Race", "AutoTrialAllRace", false, "Tự động trial tất cả Race"))
-TabRace:AddToggle(T("Auto Kill Player Trial V4", "AutoKillTrialPlayer", false, "Tự động hạ player trong Trial V4"))
-TabRace:AddToggle(T("Auto Active Race V3", "AutoRaceV3", false, "Tự động bật Race V3"))
-TabRace:AddToggle(T("Auto Active Race V4", "AutoRaceV4", false, "Tự động bật Race V4"))
+TabRace:AddButton(B("Teleport To Top Great Tree", "Lên Great Tree", function() topos(CFrame.new(2948,2288,-7215)) end))
+TabRace:AddButton(B("Teleport Temple Of Time", "Tới Temple Of Time", function() topos(CFrame.new(28286.35546875,14895.3017578125,102.50769424438477)) end))
+TabRace:AddButton(B("Teleport Lever Pull", "Tới lever", function() _G.TeleportLever = true end))
+TabRace:AddButton(B("Teleport To The Clock", "Tới đồng hồ", function() _G.TeleportClock = true end))
+TabRace:AddToggle(T("Auto Race Door", "AutoRaceDoor", false, "Mở cửa Race"))
+TabRace:AddButton(B("Buy Ancient One Quest", "Quest Ancient One", function() pcall(function() Invoke("ProQuestProgress","AncientOne") end) end))
+TabRace:AddToggle(T("Auto Trial Human Ghost", "AutoTrial", false, "Trial Human/Ghost"))
+TabRace:AddToggle(T("Auto Trial All Race", "AutoTrialAllRace", false, "Trial mọi Race"))
+TabRace:AddToggle(T("Auto Kill Player Trial V4", "AutoKillTrialPlayer", false, "Giết player Trial V4"))
+TabRace:AddToggle(T("Auto Active Race V3", "AutoRaceV3", false, "Bật Race V3"))
+TabRace:AddToggle(T("Auto Active Race V4", "AutoRaceV4", false, "Bật Race V4"))
 TabRace:AddButton(B("Upgrade Race", "Nâng Race", function() pcall(function() Invoke("UpgradeRace") end) end))
 
 TabRaid:AddDropdown({
 	Name = "Select Chip",
-	Description = "Chọn chip Raid",
+	Description = "Chọn chip",
 	Options = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand","Phoenix","Dough"},
 	Default = _G.SelectChip,
 	Callback = function(v) _G.SelectChip = v end,
 })
 local raidItems = {
-	{"Auto Buy Chip","AutoBuyChip","Tự động mua chip"},
-	{"Auto Start Raid","AutoStartRaid","Tự động bắt đầu Raid"},
-	{"Auto Farm Raid Next Island","AutoFarmRaid","Tự động farm đảo tiếp theo trong Raid"},
-	{"Auto Get Fruit Low Beli","AutoGetFruitLowBeli","Tự động lấy fruit giá thấp"},
-	{"Auto Buy Chip Law","AutoBuyLawChip","Tự động mua chip Law"},
-	{"Auto Start Raid Law","AutoStartLawRaid","Tự động bắt đầu Law Raid"},
-	{"Auto Farm Law Raid","AutoFarmLawRaid","Tự động farm Law Raid"},
-	{"Auto Skill Z","AutoSkillZ","Tự động dùng skill Z"},
-	{"Auto Skill X","AutoSkillX","Tự động dùng skill X"},
-	{"Auto Skill C","AutoSkillC","Tự động dùng skill C"},
+	{"Auto Buy Chip","AutoBuyChip","Mua chip"},
+	{"Auto Start Raid","AutoStartRaid","Bắt đầu Raid"},
+	{"Auto Farm Raid Next Island","AutoFarmRaid","Farm đảo Raid"},
+	{"Auto Get Fruit Low Beli","AutoGetFruitLowBeli","Fruit giá thấp"},
+	{"Auto Buy Chip Law","AutoBuyLawChip","Mua chip Law"},
+	{"Auto Start Raid Law","AutoStartLawRaid","Bắt đầu Law Raid"},
+	{"Auto Farm Law Raid","AutoFarmLawRaid","Farm Law Raid"},
+	{"Auto Skill Z","AutoSkillZ","Skill Z"},
+	{"Auto Skill X","AutoSkillX","Skill X"},
+	{"Auto Skill C","AutoSkillC","Skill C"},
 }
 for _, x in ipairs(raidItems) do
 	TabRaid:AddToggle(T(x[1], x[2], false, x[3]))
 end
 
-TabFruit:AddToggle(T("Auto Random Fruits", "AutoRandomFruits", false, "Tự động Random fruit"))
-TabFruit:AddToggle(T("Auto Store Fruits", "AutoStoreFruits", false, "Tự động cất fruit vào kho"))
-TabFruit:AddButton(B("Teleport To Fruit Spawn", "Dịch chuyển tới fruit đang spawn", function()
+TabFruit:AddToggle(T("Auto Random Fruits", "AutoRandomFruits", false, "Random fruit"))
+TabFruit:AddToggle(T("Auto Store Fruits", "AutoStoreFruits", false, "Cất fruit"))
+TabFruit:AddButton(B("Teleport To Fruit Spawn", "Tới fruit spawn", function()
 	pcall(function()
 		for _, obj in ipairs(Workspace:GetChildren()) do
 			local n = string.lower(obj.Name)
@@ -475,23 +475,23 @@ TabFruit:AddButton(B("Teleport To Fruit Spawn", "Dịch chuyển tới fruit đa
 		end
 	end)
 end))
-TabFruit:AddButton(B("Store Fruit Now", "Cất fruit ngay", function() pcall(function() Invoke("StoreFruit") end) end))
-TabFruit:AddButton(B("Fruit Stock", "Xem kho fruit", function() pcall(function() print(Invoke("getInventory")) end) end))
-TabFruit:AddToggle(T("Esp Fruits", "EspFruits", false, "Hiện ESP fruit"))
-TabFruit:AddToggle(T("Esp Berry", "EspBerry", false, "Hiện ESP Berry"))
+TabFruit:AddButton(B("Store Fruit Now", "Cất fruit", function() pcall(function() Invoke("StoreFruit") end) end))
+TabFruit:AddButton(B("Fruit Stock", "Kho fruit", function() pcall(function() print(Invoke("getInventory")) end) end))
+TabFruit:AddToggle(T("Esp Fruits", "EspFruits", false, "ESP fruit"))
+TabFruit:AddToggle(T("Esp Berry", "EspBerry", false, "ESP Berry"))
 
-TabTP:AddButton(B("Join Sea 1", "Dịch chuyển Sea 1", function() Invoke("TravelMain") end))
-TabTP:AddButton(B("Join Sea 2", "Dịch chuyển Sea 2", function() Invoke("TravelDressrosa") end))
-TabTP:AddButton(B("Join Sea 3", "Dịch chuyển Sea 3", function() Invoke("TravelZou") end))
-TabTP:AddButton(B("Request Entrance", "Yêu cầu vào khu vực (entrance)", function() pcall(function() Invoke("requestEntrance") end) end))
+TabTP:AddButton(B("Join Sea 1", "Tới Sea 1", function() Invoke("TravelMain") end))
+TabTP:AddButton(B("Join Sea 2", "Tới Sea 2", function() Invoke("TravelDressrosa") end))
+TabTP:AddButton(B("Join Sea 3", "Tới Sea 3", function() Invoke("TravelZou") end))
+TabTP:AddButton(B("Request Entrance", "Vào entrance", function() pcall(function() Invoke("requestEntrance") end) end))
 
-TabPvP:AddToggle(T("Esp Players", "EspPlayers", false, "Hiện ESP người chơi"))
-TabPvP:AddToggle(T("Esp Chest", "EspChest", false, "Hiện ESP rương"))
-TabPvP:AddToggle(T("Speed Boost", "SpeedHack", false, "Tăng tốc chạy"))
+TabPvP:AddToggle(T("Esp Players", "EspPlayers", false, "ESP player"))
+TabPvP:AddToggle(T("Esp Chest", "EspChest", false, "ESP rương"))
+TabPvP:AddToggle(T("Speed Boost", "SpeedHack", false, "Tăng tốc"))
 TabPvP:AddToggle(T("Jump Boost", "JumpHack", false, "Nhảy cao"))
-TabPvP:AddToggle(T("Get Quest Elite Players", "ElitePlayerQuest", false, "Nhận quest Elite Player"))
-TabPvP:AddToggle(T("Auto Kill Player Quest", "AutoKillPlayerQuest", false, "Tự động hạ player theo quest"))
-TabPvP:AddButton(B("Player Hunter", "Bắt đầu Player Hunter", function() pcall(function() Invoke("PlayerHunter") end) end))
+TabPvP:AddToggle(T("Get Quest Elite Players", "ElitePlayerQuest", false, "Quest Elite Player"))
+TabPvP:AddToggle(T("Auto Kill Player Quest", "AutoKillPlayerQuest", false, "Giết player quest"))
+TabPvP:AddButton(B("Player Hunter", "Player Hunter", function() pcall(function() Invoke("PlayerHunter") end) end))
 
 local shopBuys = {
 	{"Buy Black Leg $150,000","Black Leg","Mua Black Leg"},
@@ -530,43 +530,43 @@ for _, x in ipairs(shopBuys) do
 	local title, item, desc = x[1], x[2], x[3]
 	TabShop:AddButton(B(title, desc, function() BuyItem(item) end))
 end
-TabShop:AddButton(B("Buy Dragon Claw 1,500F", "Mua Dragon Claw (Fragment)", function() Invoke("BlackbeardReward","DragonClaw","1") Invoke("BlackbeardReward","DragonClaw","2") end))
+TabShop:AddButton(B("Buy Dragon Claw 1,500F", "Mua Dragon Claw", function() Invoke("BlackbeardReward","DragonClaw","1") Invoke("BlackbeardReward","DragonClaw","2") end))
 TabShop:AddButton(B("Buy Sharkman Karate $2,500,000 5,000F", "Mua Sharkman Karate", function() pcall(function() Invoke("BuySharkmanKarate") end) BuyItem("Sharkman Karate") end))
-TabShop:AddButton(B("Buy Pole V2 5,000F", "Mua Pole V2 (Fragment)", function() Invoke("ThunderGodTalk") end))
-TabShop:AddButton(B("Buy Kabucha 1,500F", "Mua Kabucha (Fragment)", function() Invoke("BlackbeardReward","Slingshot","1") Invoke("BlackbeardReward","Slingshot","2") end))
-TabShop:AddButton(B("Buy Bizarre Rifle 250 Ectoplasm", "Mua Bizarre Rifle bằng Ectoplasm", function() Invoke("Ectoplasm","Buy",1) end))
+TabShop:AddButton(B("Buy Pole V2 5,000F", "Mua Pole V2", function() Invoke("ThunderGodTalk") end))
+TabShop:AddButton(B("Buy Kabucha 1,500F", "Mua Kabucha", function() Invoke("BlackbeardReward","Slingshot","1") Invoke("BlackbeardReward","Slingshot","2") end))
+TabShop:AddButton(B("Buy Bizarre Rifle 250 Ectoplasm", "Mua Bizarre Rifle", function() Invoke("Ectoplasm","Buy",1) end))
 for _, c in ipairs({"Dragonheart","Dragonstorm","DinoHood","SharkTooth","TerrorJaw","SharkAnchor","LeviathanCrown","LeviathanShield","LeviathanBoat","LegendaryScroll","MythicalScroll"}) do
 	TabShop:AddButton(B("Craft "..c, "Chế tạo "..c, function() CraftItem(c) end))
 end
 TabShop:AddButton(B("Buy Haki", "Mua Haki", function() pcall(function() Invoke("BuyHaki") end) end))
-TabShop:AddButton(B("Change Race Ghoul", "Đổi tộc thành Ghoul", function() pcall(function() Invoke("EvolvementProgress") end) end))
-TabShop:AddButton(B("Change Race Cyborg", "Đổi tộc thành Cyborg", function() pcall(function() Invoke("CyborgTrainer") end) end))
-TabShop:AddButton(B("Reset Stats 2,500F", "Reset chỉ số (Fragment)", function() Invoke("BlackbeardReward","Refund","1") Invoke("BlackbeardReward","Refund","2") end))
-TabShop:AddButton(B("Random Race 3,000F", "Random tộc (Fragment)", function() Invoke("BlackbeardReward","Reroll","1") Invoke("BlackbeardReward","Reroll","2") end))
+TabShop:AddButton(B("Change Race Ghoul", "Đổi tộc Ghoul", function() pcall(function() Invoke("EvolvementProgress") end) end))
+TabShop:AddButton(B("Change Race Cyborg", "Đổi tộc Cyborg", function() pcall(function() Invoke("CyborgTrainer") end) end))
+TabShop:AddButton(B("Reset Stats 2,500F", "Reset chỉ số", function() Invoke("BlackbeardReward","Refund","1") Invoke("BlackbeardReward","Refund","2") end))
+TabShop:AddButton(B("Random Race 3,000F", "Random tộc", function() Invoke("BlackbeardReward","Reroll","1") Invoke("BlackbeardReward","Reroll","2") end))
 
-TabSettings:AddParagraph({ Title = "Unban Fast Attack - M1 Fruit", Content = "Cần load thêm bên ngoài nếu cần" })
+TabSettings:AddParagraph({ Title = "Unban Fast Attack - M1 Fruit", Content = "Load thêm nếu cần" })
 local settingsItems = {
-	{"Set Home Point","CheckPoint",false,"Lưu điểm hồi sinh"},
-	{"Infinite Soru","InfiniteSoru",false,"Soru không giới hạn"},
-	{"Infinite Geppo","InfiniteGeppo",false,"Geppo không giới hạn"},
-	{"Dodge No Cooldown","DodgeNoCD",false,"Né tránh không thời gian hồi chiêu"},
-	{"Walk on Water","WalkWater",true,"Đi bộ trên mặt nước"},
-	{"Melee","AutoStatsMelee",false,"Tự động cộng điểm Melee"},
-	{"Defense","AutoStatsDefense",false,"Tự động cộng điểm Defense"},
-	{"Sword","AutoStatsSword",false,"Tự động cộng điểm Sword"},
-	{"Gun","AutoStatsGun",false,"Tự động cộng điểm Gun"},
-	{"Fruit","AutoStatsFruit",false,"Tự động cộng điểm Fruit"},
-	{"Buso Haki","AutoHaki",false,"Tự động bật Buso Haki"},
-	{"Delete Lava","DeleteLava",false,"Xóa dung nham"},
-	{"Body Clip","BodyClip",false,"Xuyên vật thể (body clip)"},
+	{"Set Home Point","CheckPoint",false,"Lưu điểm spawn"},
+	{"Infinite Soru","InfiniteSoru",false,"Soru vô hạn"},
+	{"Infinite Geppo","InfiniteGeppo",false,"Geppo vô hạn"},
+	{"Dodge No Cooldown","DodgeNoCD",false,"Né không cooldown"},
+	{"Walk on Water","WalkWater",true,"Đi trên nước"},
+	{"Melee","AutoStatsMelee",false,"Auto cộng  điểm Melee"},
+	{"Defense","AutoStatsDefense",false,"Auto cộng  điểm Defense"},
+	{"Sword","AutoStatsSword",false,"Auto cộng  điểm Sword"},
+	{"Gun","AutoStatsGun",false,"Auto cộng  điểm Gun"},
+	{"Fruit","AutoStatsFruit",false,"Auto cộng  điểm Fruit"},
+	{"Buso Haki","AutoHaki",false,"Auto bật Haki"},
+	{"Delete Lava","DeleteLava",false,"Xóa lava"},
+	{"Body Clip","BodyClip",false,"Đi xuyên tường"},
 }
 for _, x in ipairs(settingsItems) do
 	TabSettings:AddToggle(T(x[1], x[2], x[3], x[4]))
 end
-TabSettings:AddButton(B("Join Pirates Team", "Vào phe Pirates", function() Invoke("SetTeam","Pirates") end))
+TabSettings:AddButton(B("Join Pirates Team", " Vào phe Pirates", function() Invoke("SetTeam","Pirates") end))
 TabSettings:AddButton(B("Join Marines Team", "Vào phe Marines", function() Invoke("SetTeam","Marines") end))
-TabSettings:AddButton(B("Open Title Name", "Mở menu Title", function() pcall(function() LocalPlayer.PlayerGui.Main.Titles.Visible = true end) end))
-TabSettings:AddButton(B("FPS Boost", "Tăng FPS, giảm đồ họa", function()
+TabSettings:AddButton(B("Open Title Name", "Mở Bảng Title", function() pcall(function() LocalPlayer.PlayerGui.Main.Titles.Visible = true end) end))
+TabSettings:AddButton(B("FPS Boost", "Tăng FPS", function()
 	pcall(function()
 		settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
 		for _, obj in ipairs(game:GetDescendants()) do
@@ -576,14 +576,14 @@ TabSettings:AddButton(B("FPS Boost", "Tăng FPS, giảm đồ họa", function()
 		end
 	end)
 end))
-TabSettings:AddButton(B("Codes", "Nhập toàn bộ code", function()
+TabSettings:AddButton(B("Codes", "Nhập code", function()
 	for _, code in ipairs({"LIGHTNINGABUSE","SUB2GAMERROBOT_RESET1","SUB2GAMERROBOT_EXP1","EASTEREXP","1LOSTADMIN","KITT_RESET","SUB2CAPTAINMAUI","SUB2UNCLEKIZARU","SUB2OFFICIALNOOBIE","SUB2NOOBMASTER123","SUB2DAIGROCK","STRAWHATMAINE","TANTAIGAMING","THEGREATACE","KITTGAMING","Sub2Fer999","Enyu_is_Pro","Magicbus","JCWK","Starcodeheo","Bluxxy","Axiore","Bignews","CHANDLER","FUDD10_V2","FUDD10"}) do
 		pcall(function() Remotes.Redeem:InvokeServer(code) end)
 		task.wait(0.3)
 	end
 end))
-TabSettings:AddButton(B("Rejoin Server", "Vào lại server hiện tại", function() TeleportService:Teleport(game.PlaceId, LocalPlayer) end))
-TabSettings:AddButton(B("Server Hop", "Chuyển sang server khác", function() Hop() end))
+TabSettings:AddButton(B("Rejoin Server", "Vào lại Server", function() TeleportService:Teleport(game.PlaceId, LocalPlayer) end))
+TabSettings:AddButton(B("Server Hop", "Đổi server khác", function() Hop() end))
 TabSettings:AddParagraph({ Title = "Info", Content = "UI restored from dump. Farm engines are flags only." })
 
 pcall(function() if RedzLib.Init then RedzLib:Init() end end)
