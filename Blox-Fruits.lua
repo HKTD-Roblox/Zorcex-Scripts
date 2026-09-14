@@ -25,7 +25,7 @@ local SEA3 = {[7449423635]=true,[100117331123089]=true}
 local World1 = SEA1[game.PlaceId] == true
 local World2 = SEA2[game.PlaceId] == true
 local World3 = SEA3[game.PlaceId] == true
-
+co
 _G.SelectWeapon = _G.SelectWeapon or "Melee"
 _G.SelectMaterial = _G.SelectMaterial or "Angel Wings"
 _G.SelectChip = _G.SelectChip or "Flame"
@@ -273,7 +273,7 @@ pcall(function()
 end)
 
 local TabFarm = Window:MakeTab({ "Farming", "home" })
-local TabFish = Window:MakeTab({ "Auto Fishing", "droplet" })
+local TabFish = Window:MakeTab({ "Auto Fishing", "rbxassetid://127664059821666" })
 local TabQuest = Window:MakeTab({ "Quest | Items", "swords" })
 local TabDojo = Window:MakeTab({ "Volcano Dojo", "cake" })
 local TabSea = Window:MakeTab({ "Sea Event", "waves" })
@@ -293,17 +293,17 @@ TabFarm:AddDropdown({
 	Default = _G.SelectWeapon,
 	Callback = function(v) _G.SelectWeapon = v end,
 })
-TabFarm:AddToggle(T("Auto Farm Level", "AutoFarm", false, "Tự động farm level"))
+TabFarm:AddToggle(T("Auto Farm Level", "AutoFarm", false, "Auto farm level"))
 TabFarm:AddToggle(T("Farm Level New", "FarmLevelNew", false, "Farm level mới"))
-TabFarm:AddToggle(T("Auto Kill Near | Mob Aura", "AutoKillNear", false, "Đánh quái gần"))
-TabFarm:AddToggle(T("Auto Select Boss", "AutoSelectBoss", false, "Chọn boss"))
-TabFarm:AddToggle(T("Auto Farm Boss", "AutoFarmBoss", false, "Farm boss"))
+TabFarm:AddToggle(T("Auto Kill Near | Mob Aura", "AutoKillNear", false, "Đánh quái ở gần"))
+TabFarm:AddToggle(T("Auto Select Boss", "AutoSelectBoss", false, "Auto Chọn boss"))
+TabFarm:AddToggle(T("Auto Farm Boss", "AutoFarmBoss", false, "Auto farm boss"))
 TabFarm:AddToggle(T("Farm Pirate", "FarmPirate", false, "Farm Pirate"))
 TabFarm:AddToggle(T("Farm Boss", "FarmBoss", false, "Farm boss"))
 TabFarm:AddButton(B("Update Boss", "Cập nhật boss", function() _G.UpdateBossList = true end))
 TabFarm:AddParagraph({ Title = "Boss Spawn Status", Content = "Trạng thái boss" })
 TabFarm:AddToggle(T("Check Eyes Status", "CheckEyes", false, "Kiểm tra Eyes"))
-TabFarm:AddToggle(T("Auto Farm Tyrant", "AutoFarmTyrant", false, "Farm Tyrant"))
+TabFarm:AddToggle(T("Auto Farm Tyrant", "AutoFarmTyrant", false, "Auto Farm Tyrant"))
 TabFarm:AddButton(B("Summon Tyrant Of The Skies", "Triệu hồi Tyrant", function() _G.SummonTyrant = true end))
 TabFarm:AddToggle(T("Check Bone", "CheckBone", false, "Kiểm tra Bone"))
 TabFarm:AddToggle(T("Farm Bone", "FarmBone", false, "Farm Bone"))
@@ -314,8 +314,8 @@ TabFarm:AddToggle(T("Auto Try Luck", "AutoTryLuck", false, "Tự động Try Luc
 TabFarm:AddToggle(T("Check Cake Prince", "CheckCakePrince", false, "Kiểm tra Cake Prince"))
 TabFarm:AddToggle(T("Farm Katakuri", "FarmKatakuri", false, "Farm Katakuri"))
 TabFarm:AddToggle(T("Farm Katakuri V2", "FarmKatakuriV2", false, "Farm Katakuri V2"))
-TabFarm:AddToggle(T("Auto Collect Berry", "AutoCollectBerry", false, "Nhặt Berry"))
-TabFarm:AddToggle(T("Auto Farm Chest [ Tween ]", "AutoFarmChest", false, "Farm rương"))
+TabFarm:AddToggle(T("Auto Collect Berry", "AutoCollectBerry", false, "Auto Nhặt Berry"))
+TabFarm:AddToggle(T("Auto Farm Chest [ Tween ]", "AutoFarmChest", false, "Auto Farm rương"))
 TabFarm:AddDropdown({
 	Name = "Select Material",
 	Description = "Chọn material",
@@ -341,16 +341,16 @@ TabFish:AddDropdown({
 })
 TabFish:AddDropdown({
 	Name = "Select Fishing Rod",
-	Description = "Chọn cần",
+	Description = "Chọn cần câu",
 	Options = {"Default","Rod1","Rod2","Rod3"},
 	Default = "Default",
 	Callback = function(v) _G.SelectRod = v end,
 })
 
 local questItems = {
-	{"AutoSecondSea","AutoSecondSea","Mở Sea 2"},
-	{"Auto Quest Sea 3","AutoThirdSea","Quest Sea 3"},
-	{"Auto Quest Sea Bartilo","AutoBartilo","Quest Bartilo"},
+	{"AutoSecondSea","AutoSecondSea","Auto Quest Sea 2"},
+	{"Auto Quest Sea 3","AutoThirdSea","Auto Quest Sea 3"},
+	{"Auto Quest Sea Bartilo","AutoBartilo","Auto Quest Bartilo"},
 	{"Kill Greybeard","KillGreybeard","Giết Greybeard"},
 	{"Auto Get Saber","AutoGetSaber","Nhận Saber"},
 	{"Auto Get Sword Pole","AutoGetPole","Nhận Pole"},
@@ -389,31 +389,31 @@ TabQuest:AddButton(B("Bartilo Quest Progress", "Quest Bartilo", function() pcall
 TabQuest:AddButton(B("Abandon Quest", "Hủy quest", function() pcall(function() Invoke("AbandonQuest") end) end))
 
 TabDojo:AddButton(B("Tween Dragon Dojo", "Tới Dragon Dojo", function() _G.TweenDragonDojo = true end))
-TabDojo:AddToggle(T("Auto Dragon Hunter", "AutoDragonHunter", false, "Dragon Hunter"))
-TabDojo:AddButton(B("Craft Volcanic Magnet", "Craft Magnet", function() CraftItem("Volcanic Magnet") end))
+TabDojo:AddToggle(T("Auto Dragon Hunter", "AutoDragonHunter", false, "Auto nhiệm vụ"))
+TabDojo:AddButton(B("Craft Volcanic Magnet", "Chế tạo Magnet", function() CraftItem("Volcanic Magnet") end))
 
 local seaItems = {
-	{"Check Prehistoric Island","CheckPrehistoric","Check Prehistoric"},
-	{"Auto Find Prehistoric","FindPrehistoric","Tìm Prehistoric"},
-	{"Auto Tween Prehistoric Island","TweenPrehistoric","Tween Prehistoric"},
-	{"Auto Defend Prehistoric","DefendPrehistoric","Phòng thủ"},
-	{"Auto Use Melee","AutoUseMelee","Dùng Melee"},
-	{"Auto Use Sword","AutoUseSword","Dùng Sword"},
-	{"Auto Use Gun","AutoUseGun","Dùng Gun"},
-	{"Auto Kill Golem","KillGolem","Giết Golem"},
-	{"Auto Kill Aura Golem","KillAuraGolem","Giết Aura Golem"},
-	{"Auto Collect Bone","CollectBone","Nhặt Bone"},
-	{"Auto Collect Egg","CollectEgg","Nhặt Egg"},
-	{"Check Kitsune Island","CheckKitsune","Check Kitsune"},
-	{"Auto Tween Kitsune Island","TweenKitsune","Tween Kitsune"},
+	{"Check Prehistoric Island","CheckPrehistoric","Kiểm tra đảo Prehistoric"},
+	{"Auto Find Prehistoric","FindPrehistoric","Tìm đảo Prehistoric"},
+	{"Auto Tween Prehistoric Island","TweenPrehistoric","Tới đảo Prehistoric"},
+	{"Auto Defend Prehistoric","DefendPrehistoric","Auto Phòng thủ Prehistoric"},
+	{"Auto Use Melee","AutoUseMelee","Auto Dùng Melee"},
+	{"Auto Use Sword","AutoUseSword","Auto Dùng Sword"},
+	{"Auto Use Gun","AutoUseGun","Auto Dùng Gun"},
+	{"Auto Kill Golem","KillGolem","Auto Giết Golem"},
+	{"Auto Kill Aura Golem","KillAuraGolem","Auto Giết Aura Golem"},
+	{"Auto Collect Bone","CollectBone","Auto Nhặt Bone"},
+	{"Auto Collect Egg","CollectEgg","Auto Nhặt Egg"},
+	{"Check Kitsune Island","CheckKitsune","Kiểm tra đảo Kitsune"},
+	{"Auto Tween Kitsune Island","TweenKitsune","Tới đảo Kitsune"},
 	{"Esp Kitsune Island","EspKitsune","ESP Kitsune"},
-	{"Auto Azure Ember","AutoAzureEmber","Azure Ember"},
-	{"Auto Drive Boats","AutoDriveBoats","Lái thuyền"},
-	{"Auto Kill Terror Shark","KillTerrorShark","Giết Terror Shark"},
-	{"Auto Kill Shark","KillShark","Giết Shark"},
-	{"Auto Kill Piranha","KillPiranha","Giết Piranha"},
-	{"Auto Kill Fish Crew Member","KillFishCrew","Giết Fish Crew"},
-	{"Check Mirage Island","CheckMirage","Check Mirage"},
+	{"Auto Azure Ember","AutoAzureEmber","Auto lấy Azure Ember"},
+	{"Auto Drive Boats","AutoDriveBoats","Auto Lái thuyền"},
+	{"Auto Kill Terror Shark","KillTerrorShark","Auto Giết Terror Shark"},
+	{"Auto Kill Shark","KillShark","Auto Giết Shark"},
+	{"Auto Kill Piranha","KillPiranha","Auto Giết Piranha"},
+	{"Auto Kill Fish Crew Member","KillFishCrew","Auto Giết Fish Crew"},
+	{"Check Mirage Island","CheckMirage","Kiểm tra Mirage"},
 	{"Tween Mirage Island","TweenMirage","Tween Mirage"},
 	{"Esp Mirage Island","EspMirage","ESP Mirage"},
 	{"Look Moon + Auto V3","LookMoon","Moon + Race V3"},
